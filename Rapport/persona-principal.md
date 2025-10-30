@@ -1,25 +1,35 @@
-# 💬 Problem Statement – Projet *Tétouan Créative*
+#  Persona principal – Projet *Tétouan Créative*
 
-## 👤 Persona concerné
-**Amal**, 24 ans, jeune artisane céramiste à Tétouan.  
-Elle souhaite faire connaître ses créations et trouver de nouveaux clients ou collaborations locales.
+##  Nom du persona
+**Amal**, jeune artiste passionnée
+
+## 🎂 Âge / Contexte
+24 ans, artisane débutante en céramique à Tétouan.  
+Travaille depuis un petit atelier partagé avec d’autres jeunes créateurs locaux.
+
+## 🎯 Objectif principal
+Faire connaître ses créations à un large public et attirer des clients ou des collaborations locales.
+
+## 💡 Besoins clés
+1. Publier facilement des photos et descriptions de ses œuvres.
+2. Recevoir des retours (likes, commentaires) pour améliorer sa visibilité.
+3. Être mise en avant dans une section “Talents de Tétouan” du blog.
+
+## ⚡ Frustrations
+- Difficile de se faire connaître sur les réseaux sociaux à cause de l’algorithme.
+- Manque de plateforme locale dédiée aux artistes de Tétouan.
+
+## 🌍 Environnement
+- Smartphone Android, connexion Wi-Fi ou 4G.  
+- Utilise Instagram et WhatsApp pour communiquer avec les clients.  
+- Passe environ 15 à 30 minutes par jour à publier du contenu.
+
+## 💬 Citation représentative
+> “J’aimerais que les gens découvrent la beauté de nos créations locales sans devoir chercher partout sur les réseaux.”
 
 ---
 
-## 🧠 Formulation du problème
-**Pour Amal,** qui peine à faire connaître ses créations locales sur les réseaux sociaux à cause de la faible visibilité et du manque de plateformes dédiées,  
-**nous voulons** créer un blog collaboratif mettant en avant les artistes et artisans de Tétouan,  
-**afin de** lui permettre de présenter facilement ses œuvres et d’être découverte par un public intéressé par l’art local.
-
----
-
-## 💡 Solutions proposées (MVP)
-1. Une **galerie numérique** où chaque artiste peut publier ses créations avec photos et descriptions.  
-2. Un **système de classement ou de mise en avant** (“Artiste du mois”, “Œuvre populaire”).  
-3. Une **page de profil simple** permettant de partager ses coordonnées et liens sociaux.  
-
----
-
-## 🎯 Bénéfice attendu
-Amal gagne en **visibilité locale** et peut **attirer de nouveaux clients ou partenaires**, tout en contribuant à **faire découvrir la richesse artisanale de Tétouan** à travers une plateforme moderne et accessible.
-
+###  Pourquoi ce persona est prioritaire
+- C’est **le cœur du projet** : sans les artistes et artisans, la plateforme n’aurait pas de contenu.  
+- Les **fonctionnalités du MVP** (création de compte, publication d’articles, galerie photo, partage) répondent directement à ses besoins.  
+- Ce persona permet de **tester rapidement la valeur** du blog pour la communauté créative de Tétouan.
