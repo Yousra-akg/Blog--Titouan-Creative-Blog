@@ -1,0 +1,33 @@
+@startuml
+title Diagramme de cas d'utilisation - Tétouan – Tétouan Créative
+
+left to right direction  ' On désactive l'orientation horizontale par défaut
+top to bottom direction  ' Et on force l'orientation verticale
+
+actor "Visiteur" as A1
+actor "Éditeur" as A2
+actor "Admin" as A3
+
+rectangle "Blog : Tétouan – Tétouan Créative" {
+
+  (Voir les détails d’un article) as UC1
+  (Consulter la liste des articles) as UC2
+  (Partager un article) as UC3
+  (Commenter / Liker / Sauvegarder un article) as UC4
+  (Rechercher / filtrer un article) as UC5
+  (Créer les articles) as UC6
+  (Valider les articles) as UC7
+
+  A1 --> UC1
+  A1 --> UC2
+  A1 --> UC3
+  A1 --> UC4
+  A1 --> UC5
+
+  A2 --> UC6
+  A2 --> UC7
+
+  A3 --> A2
+}
+
+@enduml
