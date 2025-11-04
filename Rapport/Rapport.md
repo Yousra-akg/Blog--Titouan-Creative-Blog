@@ -100,29 +100,3 @@ Le projet *Tétouan Créative* permettra aux **créateurs locaux de gagner en vi
 
 ## 🧭 Mini diagramme (instructions)
 
-```
-+-------------------------------+
-|    Tétouan Créative App       |
-|  (Blog & Galerie Numérique)   |
-+-------------------------------+
-       /         |         \
-      /          |          \
-     /           |           \
-+-------------+ +---------------+ +-------------------+
-| Créer compte| |Publier création| |Consulter galerie|
-+-------------+ +---------------+ +-------------------+
-      |               |                   |
-[Artiste/Artisan] [Artiste/Artisan]   [Visiteur]
-                                          |
-                                          |
-                                +-------------------+
-                                | Aimer / Commenter |
-                                +-------------------+
-                                          |
-                                          |
-                                +-------------------+
-                                |Contacter un artiste|
-                                +-------------------+
-                                          |
-                                      [Visiteur]
-```
