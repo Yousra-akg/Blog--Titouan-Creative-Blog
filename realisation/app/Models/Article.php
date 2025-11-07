@@ -25,25 +25,16 @@ class Article extends Model
         'updated_at' => 'datetime',
     ];
 
-    /**
-     * Relation avec User (auteur)
-     */
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Relation avec Commentaires
-     */
     public function commentaires()
     {
         return $this->hasMany(Commentaire::class);
     }
 
-    /**
-     * Relation many-to-many avec Tags
-     */
     public function tags()
     {
         return $this->belongsToMany(Tag::class);

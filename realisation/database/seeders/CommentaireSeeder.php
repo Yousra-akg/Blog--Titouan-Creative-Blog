@@ -14,10 +14,9 @@ class CommentaireSeeder extends Seeder
         $articles = Article::all();
         $users = User::all();
 
-        // Créer 3-5 commentaires par article
         $articles->each(function ($article) use ($users) {
             Commentaire::factory()
-                ->count(rand(3, 5))
+                ->count(5)
                 ->create([
                     'article_id' => $article->id,
                     'user_id' => $users->random()->id,

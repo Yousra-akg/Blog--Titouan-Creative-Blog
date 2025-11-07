@@ -15,17 +15,11 @@ class Commentaire extends Model
         'user_id',
     ];
 
-    /**
-     * Relation avec User (auteur du commentaire)
-     */
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Relation avec Article
-     */
     public function article()
     {
         return $this->belongsTo(Article::class);

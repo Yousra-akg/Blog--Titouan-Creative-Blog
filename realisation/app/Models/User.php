@@ -49,17 +49,11 @@ class User extends Authenticatable
         ];
     }
 
-    /**
-     * Relation avec Articles (articles créés par l'utilisateur)
-     */
     public function articles()
     {
         return $this->hasMany(Article::class);
     }
 
-    /**
-     * Relation avec Commentaires (commentaires écrits par l'utilisateur)
-     */
     public function commentaires()
     {
         return $this->hasMany(Commentaire::class);
