@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvel Article - Tétouan Créative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-gray-100 bg-gray-900">
+    
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 w-64 bg-gray-800 border-r border-purple-500/20 z-50">
+        <div class="flex flex-col h-full">
+            <!-- Logo -->
+            <div class="p-6 border-b border-purple-500/20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <i class="fas fa-palette text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold gradient-text">Tétouan Créative</h1>
+                        <p class="text-xs text-gray-400">Administration</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <nav class="flex-1 p-4 space-y-2">
+                <a href="admin-dashboard.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-gray-700/50 hover:text-gray-300 transition">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Articles</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-gray-700/50 hover:text-gray-300 transition">
+                    <i class="fas fa-images"></i>
+                    <span>Médias</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-gray-700/50 hover:text-gray-300 transition">
+                    <i class="fas fa-comments"></i>
+                    <span>Commentaires</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-gray-700/50 hover:text-gray-300 transition">
+                    <i class="fas fa-cog"></i>
+                    <span>Paramètres</span>
+                </a>
+            </nav>
+
+            <!-- User & Logout -->
+            <div class="p-4 border-t border-purple-500/20">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold">Admin</p>
+                            <p class="text-xs text-gray-400">Administrateur</p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="logout()" class="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-red-500/20 text-red-300 rounded-lg hover:bg-red-500/30 transition">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Déconnexion</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-64 min-h-screen">
+        <!-- Header -->
+        <header class="bg-gray-800/50 backdrop-blur-md border-b border-purple-500/20 sticky top-0 z-40">
+            <div class="px-8 py-4 flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold" id="pageTitle">Nouvel Article</h2>
+                    <p class="text-gray-400 text-sm">Créez ou modifiez un article</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="admin-dashboard.html" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Retour
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Form Content -->
+        <div class="p-8">
+            <form id="articleForm" class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Main Content -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <!-- Titre -->
+                        <div class="bg-gray-800/50 backdrop-blur-md border border-purple-500/20 rounded-xl p-6">
+                            <label for="title" class="block text-sm font-medium text-gray-300 mb-2">
+                                <i class="fas fa-heading mr-2"></i>Titre de l'article *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="title" 
+                                required
+                                class="w-full px-4 py-3 bg-gray-900/50 border border-purple-500/30 rounded-lg focus:outline-none focus:border-purple-500 text-gray-100 placeholder-gray-500"
+                                placeholder="Ex: L'art de la poterie traditionnelle"
+                            >
+                        </div>
+
+                        
+
+                        <!-- Extrait -->
+                        <div class="bg-gray-800/50 backdrop-blur-md border border-purple-500/20 rounded-xl p-6">
+                            <label for="excerpt" class="block text-sm font-medium text-gray-300 mb-2">
+                                <i class="fas fa-align-left mr-2"></i>Extrait (résumé court)
+                            </label>
+                            <textarea 
+                                id="excerpt" 
+                                rows="3"
+                                class="w-full px-4 py-3 bg-gray-900/50 border border-purple-500/30 rounded-lg focus:outline-none focus:border-purple-500 text-gray-100 placeholder-gray-500 resize-none"
+                                placeholder="Un court résumé de l'article qui apparaîtra dans les listes..."
+                            ></textarea>
+                            <p class="text-xs text-gray-400 mt-2">Recommandé: 150-200 caractères</p>
+                        </div>
+
+                        <!-- Contenu -->
+                        <div class="bg-gray-800/50 backdrop-blur-md border border-purple-500/20 rounded-xl p-6">
+                            <label for="content" class="block text-sm font-medium text-gray-300 mb-2">
+                                <i class="fas fa-file-alt mr-2"></i>Contenu de l'article *
+                            </label>
+                            <textarea 
+                                id="content" 
+                                rows="15"
+                                required
+                                class="w-full px-4 py-3 bg-gray-900/50 border border-purple-500/30 rounded-lg focus:outline-none focus:border-purple-500 text-gray-100 placeholder-gray-500 resize-y"
+                                placeholder="Écrivez le contenu de votre article ici...\n\nVous pouvez utiliser du HTML pour le formatage."
+                            ></textarea>
+                            <div class="flex items-center justify-between mt-2">
+                                <p class="text-xs text-gray-400">Supporte le HTML</p>
+                                <button type="button" class="text-xs text-purple-400 hover:text-purple-300">
+                                    <i class="fas fa-question-circle mr-1"></i>Guide de formatage
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="lg:col-span-1 space-y-6">
+                        <!-- Publier -->
+                        <div class="bg-gray-800/50 backdrop-blur-md border border-purple-500/20 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold mb-4">
+                                <i class="fas fa-paper-plane mr-2"></i>Publication
+                            </h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="status" class="block text-sm font-medium text-gray-300 mb-2">Statut</label>
+                                    <select 
+                                        id="status" 
+                                        class="w-full px-4 py-2 bg-gray-900/50 border border-purple-500/30 rounded-lg focus:outline-none focus:border-purple-500 text-gray-100"
+                                    >
+                                        <option value="draft">Brouillon</option>
+                                        <option value="published">Publié</option>
+                                        <option value="scheduled">Programmé</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="publishDate" class="block text-sm font-medium text-gray-300 mb-2">Date de publication</label>
+                                    <input 
+                                        type="datetime-local" 
+                                        id="publishDate" 
+                                        class="w-full px-4 py-2 bg-gray-900/50 border border-purple-500/30 rounded-lg focus:outline-none focus:border-purple-500 text-gray-100"
+                                    >
+                                </div>
+                                <div>
+                                    <label for="author" class="block text-sm font-medium text-gray-300 mb-2">Auteur</label>
+                                    <input 
+                                        type="text" 
+                                        id="author" 
+                                        value="Admin"
+                                        class="w-full px-4 py-2 bg-gray-900/50 border border-purple-500/30 rounded-lg focus:outline-none focus:border-purple-500 text-gray-100"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Catégorie -->
+                        <div class="bg-gray-800/50 backdrop-blur-md border border-purple-500/20 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold mb-4">
+                                <i class="fas fa-folder mr-2"></i>Catégorie *
+                            </h3>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-3 p-3 bg-gray-900/30 rounded-lg hover:bg-gray-900/50 cursor-pointer transition">
+                                    <input type="radio" name="category" value="artisanat" class="text-purple-500 focus:ring-purple-500">
+                                    <span class="text-gray-300">Artisanat</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 bg-gray-900/30 rounded-lg hover:bg-gray-900/50 cursor-pointer transition">
+                                    <input type="radio" name="category" value="art" class="text-purple-500 focus:ring-purple-500">
+                                    <span class="text-gray-300">Art</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 bg-gray-900/30 rounded-lg hover:bg-gray-900/50 cursor-pointer transition">
+                                    <input type="radio" name="category" value="patrimoine" class="text-purple-500 focus:ring-purple-500">
+                                    <span class="text-gray-300">Patrimoine</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 bg-gray-900/30 rounded-lg hover:bg-gray-900/50 cursor-pointer transition">
+                                    <input type="radio" name="category" value="culture" class="text-purple-500 focus:ring-purple-500">
+                                    <span class="text-gray-300">Culture</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Image à la une -->
+                        <div class="bg-gray-800/50 backdrop-blur-md border border-purple-500/20 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold mb-4">
+                                <i class="fas fa-image mr-2"></i>Image à la une
+                            </h3>
+                            <div class="space-y-4">
+                                <div id="imagePreview" class="hidden aspect-video bg-gray-900/50 rounded-lg overflow-hidden mb-4">
+                                    <img id="previewImg" src="" alt="Preview" class="w-full h-full object-cover">
+                                </div>
+                                <label class="block">
+                                    <input type="file" id="featuredImage" accept="image/*" class="hidden">
+                                    <div class="border-2 border-dashed border-purple-500/30 rounded-lg p-6 text-center cursor-pointer hover:border-purple-500/50 transition">
+                                        <i class="fas fa-cloud-upload-alt text-3xl text-purple-400 mb-2"></i>
+                                        <p class="text-sm text-gray-400">Cliquez pour télécharger</p>
+                                        <p class="text-xs text-gray-500 mt-1">PNG, JPG jusqu'à 5MB</p>
+                                    </div>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="imageUrl" 
+                                    placeholder="Ou entrez une URL d'image"
+                                    class="w-full px-4 py-2 bg-gray-900/50 border border-purple-500/30 rounded-lg focus:outline-none focus:border-purple-500 text-gray-100 placeholder-gray-500 text-sm"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="bg-gray-800/50 backdrop-blur-md border border-purple-500/20 rounded-xl p-6">
+                            <div class="space-y-3">
+                                <button 
+                                    type="submit" 
+                                    class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:shadow-xl transition glow flex items-center justify-center"
+                                >
+                                    <i class="fas fa-save mr-2"></i>
+                                    Enregistrer
+                                </button>
+                                <button 
+                                    type="button" 
+                                    onclick="previewArticle()"
+                                    class="w-full bg-gray-700 hover:bg-gray-600 text-white py-3 rounded-lg font-semibold transition flex items-center justify-center"
+                                >
+                                    <i class="fas fa-eye mr-2"></i>
+                                    Aperçu
+                                </button>
+                                <button 
+                                    type="button" 
+                                    onclick="if(confirm('Êtes-vous sûr de vouloir annuler ?')) window.location.href='admin-dashboard.html'"
+                                    class="w-full bg-red-500/20 hover:bg-red-500/30 text-red-300 py-3 rounded-lg font-semibold transition flex items-center justify-center"
+                                >
+                                    <i class="fas fa-times mr-2"></i>
+                                    Annuler
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Vérifier l'authentification
+        function checkAuth() {
+            const isLoggedIn = localStorage.getItem('adminLoggedIn') || sessionStorage.getItem('adminLoggedIn');
+            if (!isLoggedIn) {
+                window.location.href = 'admin-login.html';
+            }
+        }
+
+        // Déconnexion
+        function logout() {
+            if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
+                localStorage.removeItem('adminLoggedIn');
+                sessionStorage.removeItem('adminLoggedIn');
+                window.location.href = 'admin-login.html';
+            }
+        }
+
+        // Générer le slug automatiquement depuis le titre
+        document.getElementById('title').addEventListener('input', function(e) {
+            const title = e.target.value;
+            const slug = title
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+            document.getElementById('slug').value = slug;
+        });
+
+        // Prévisualisation de l'image
+        document.getElementById('featuredImage').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('previewImg').src = e.target.result;
+                    document.getElementById('imagePreview').classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Prévisualisation depuis URL
+        document.getElementById('imageUrl').addEventListener('input', function(e) {
+            const url = e.target.value;
+            if (url) {
+                document.getElementById('previewImg').src = url;
+                document.getElementById('imagePreview').classList.remove('hidden');
+            }
+        });
+
+        // Soumettre le formulaire
+        document.getElementById('articleForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Récupérer les données du formulaire
+            const formData = {
+                title: document.getElementById('title').value,
+                slug: document.getElementById('slug').value,
+                excerpt: document.getElementById('excerpt').value,
+                content: document.getElementById('content').value,
+                category: document.querySelector('input[name="category"]:checked')?.value,
+                status: document.getElementById('status').value,
+                publishDate: document.getElementById('publishDate').value,
+                author: document.getElementById('author').value,
+                imageUrl: document.getElementById('imageUrl').value,
+                metaTitle: document.getElementById('metaTitle').value,
+                metaDescription: document.getElementById('metaDescription').value,
+                keywords: document.getElementById('keywords').value
+            };
+
+            // Validation
+            if (!formData.category) {
+                alert('Veuillez sélectionner une catégorie');
+                return;
+            }
+
+            // Simuler la sauvegarde (à remplacer par un appel API)
+            console.log('Article data:', formData);
+            alert('Article enregistré avec succès !');
+            window.location.href = 'admin-dashboard.html';
+        });
+
+        // Aperçu de l'article
+        function previewArticle() {
+            alert('Fonctionnalité d\'aperçu à implémenter');
+        }
+
+        // Vérifier l'auth au chargement
+        checkAuth();
+
+        // Définir la date actuelle par défaut
+        const now = new Date();
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+        document.getElementById('publishDate').value = now.toISOString().slice(0, 16);
+    </script>
+</body>
+</html>

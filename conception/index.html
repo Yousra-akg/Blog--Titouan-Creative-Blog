@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tétouan Créative - L'art dans chaque rue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-gray-100">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/60 backdrop-blur-lg border-b border-gray-200/50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-palette text-3xl gradient-text"></i>
+                    <span class="text-2xl font-bold title-font gradient-text">Tétouan Créative</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="nav-link text-gray-300 hover:text-purple-400">Accueil</a>
+                    <a href="articles.html" class="nav-link text-gray-300 hover:text-purple-400">Articles</a>
+                </div>
+                <button class="md:hidden text-white" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-green-50">
+        
+        <!-- Blobs verts organiques -->
+        <div class="absolute inset-0">
+            <!-- Blob 1 - Haut gauche -->
+            <div class="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-br from-green-400/30 to-green-600/20 rounded-full blur-3xl animate-blob"></div>
+            
+            <!-- Blob 2 - Bas droite -->
+            <div class="absolute -bottom-32 -right-32 w-[600px] h-[600px] bg-gradient-to-br from-teal-400/25 to-green-500/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+            
+            <!-- Blob 3 - Centre -->
+            <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-br from-yellow-300/20 to-green-400/15 rounded-full blur-2xl animate-blob animation-delay-4000"></div>
+            
+            <!-- Blob 4 - Milieu gauche -->
+            <div class="absolute top-1/2 -left-10 w-64 h-64 bg-gradient-to-br from-green-300/25 to-teal-400/20 rounded-full blur-2xl animate-blob animation-delay-1000"></div>
+        </div>
+        
+        <!-- Formes géométriques décoratives -->
+        <div class="absolute inset-0 opacity-20">
+            <!-- Cercles décoratifs -->
+            <div class="absolute top-20 right-20 w-32 h-32 border-4 border-green-400 rounded-full"></div>
+            <div class="absolute bottom-40 left-32 w-24 h-24 border-4 border-yellow-400 rounded-full"></div>
+            
+            <!-- Carrés tournés -->
+            <div class="absolute top-1/3 left-20 w-16 h-16 border-4 border-teal-400 transform rotate-45"></div>
+            <div class="absolute bottom-1/4 right-40 w-20 h-20 border-4 border-green-500 transform rotate-12"></div>
+            
+            <!-- Lignes décoratives -->
+            <svg class="absolute top-1/4 right-1/3 w-32 h-32" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="2" fill="none" opacity="0.5"/>
+                <circle cx="50" cy="50" r="30" stroke="#14b8a6" stroke-width="2" fill="none" opacity="0.5"/>
+            </svg>
+        </div>
+        
+        <!-- Motif de points subtil -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+                        <circle cx="15" cy="15" r="1.5" fill="#059669"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#dots)"/>
+            </svg>
+        </div>
+        
+        <div class="relative container mx-auto px-6 text-center z-10">
+            <p class="text-sm uppercase tracking-widest mb-6 text-green-700 font-medium">Bienvenue à Tétouan Créative</p>
+            
+            <!-- Titre avec branches décoratives -->
+            <div class="relative inline-block">
+                <!-- Branche décorative gauche -->
+                <div class="absolute -left-32 top-1/2 -translate-y-1/2 w-24 h-24 opacity-80 hidden md:block">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Branche avec feuilles -->
+                        <path d="M80 50 Q60 45 40 50" stroke="#fbbf24" stroke-width="2" fill="none"/>
+                        <path d="M70 40 Q65 45 60 45" stroke="#fbbf24" stroke-width="1.5" fill="none"/>
+                        <path d="M70 60 Q65 55 60 55" stroke="#fbbf24" stroke-width="1.5" fill="none"/>
+                        <ellipse cx="35" cy="50" rx="8" ry="12" fill="#fbbf24" opacity="0.8" transform="rotate(-30 35 50)"/>
+                        <ellipse cx="55" cy="42" rx="6" ry="10" fill="#fde047" opacity="0.7" transform="rotate(-45 55 42)"/>
+                        <ellipse cx="55" cy="58" rx="6" ry="10" fill="#fde047" opacity="0.7" transform="rotate(45 55 58)"/>
+                    </svg>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold title-font mb-6 leading-tight text-gray-900">
+                    <span class="inline-block hover:scale-105 transition-transform duration-300">L'Art et la Culture</span><br>
+                    <span class="inline-block hover:scale-105 transition-transform duration-300 bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">de Tétouan</span>
+                </h1>
+                
+                <!-- Branche décorative droite -->
+                <div class="absolute -right-32 top-1/2 -translate-y-1/2 w-24 h-24 opacity-80 hidden md:block">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Branche avec feuilles (miroir) -->
+                        <path d="M20 50 Q40 45 60 50" stroke="#fbbf24" stroke-width="2" fill="none"/>
+                        <path d="M30 40 Q35 45 40 45" stroke="#fbbf24" stroke-width="1.5" fill="none"/>
+                        <path d="M30 60 Q35 55 40 55" stroke="#fbbf24" stroke-width="1.5" fill="none"/>
+                        <ellipse cx="65" cy="50" rx="8" ry="12" fill="#fbbf24" opacity="0.8" transform="rotate(30 65 50)"/>
+                        <ellipse cx="45" cy="42" rx="6" ry="10" fill="#fde047" opacity="0.7" transform="rotate(45 45 42)"/>
+                        <ellipse cx="45" cy="58" rx="6" ry="10" fill="#fde047" opacity="0.7" transform="rotate(-45 45 58)"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-light">
+                Découvrez le patrimoine culturel et artistique de la perle blanche
+            </p>
+            
+            <a href="#apropos" class="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 px-12 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 transform">
+                Découvrir
+            </a>
+        </div>
+        
+        <!-- Vague décorative en bas -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white" fill-opacity="0.3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- À Propos Section -->
+    <section id="apropos" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-4">
+                <span class="inline-block px-4 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-leaf mr-2"></i>À PROPOS DE NOUS
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold title-font mb-6 gradient-text">
+                    Art & Culture de Tétouan
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16 items-center mt-16">
+                <!-- Images circulaires -->
+                <div class="relative">
+                    <!-- Grande image circulaire principale -->
+                    <div class="w-full aspect-square rounded-full overflow-hidden shadow-2xl">
+                        <img src="téléchargement (2).jpeg" alt="Tétouan" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Petite image circulaire en bas à droite -->
+                    <div class="absolute -bottom-4 -right-4 w-40 h-40 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=400" alt="Artisanat" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Petit cercle décoratif jaune -->
+                    <div class="absolute -bottom-8 -right-8 w-24 h-24 bg-yellow-400 rounded-full shadow-lg -z-10"></div>
+                </div>
+                
+                <!-- Contenu -->
+                <div class="space-y-6">
+                    <p class="text-gray-600 leading-relaxed">
+                        Bienvenue sur <strong class="text-gray-900">Tétouan Créative</strong>, un espace numérique dédié à la mise en valeur des artistes, artisans et du patrimoine culturel de la ville de Tétouan.
+                    </p>
+                    
+                    <!-- Liste avec icônes -->
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Savoir-faire local</h4>
+                                <p class="text-gray-600 text-sm">Célébration des traditions artistiques</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Artisans actifs</h4>
+                                <p class="text-gray-600 text-sm">Soutien aux artisans locaux</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Patrimoine vivant</h4>
+                                <p class="text-gray-600 text-sm">Documentation du patrimoine culturel</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Mission Section (What We're Offering) -->
+    <section id="mission" class="py-20 bg-gradient-to-b from-green-50 to-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-4">
+                <span class="inline-block px-4 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-star mr-2"></i>CE QUE NOUS OFFRONS
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold title-font mb-6 gradient-text">
+                    Nos Services
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6 mt-16">
+                <!-- Carte 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-palette text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Artisanat</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Découvrez les techniques ancestrales de nos artisans locaux
+                    </p>
+                </div>
+                
+                <!-- Carte 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-paint-brush text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Art Contemporain</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Explorez les créations des artistes modernes de Tétouan
+                    </p>
+                </div>
+                
+                <!-- Carte 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-landmark text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Patrimoine</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Plongez dans l'histoire riche de la médina de Tétouan
+                    </p>
+                </div>
+                
+                <!-- Carte 4 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Communauté</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Rejoignez notre réseau de passionnés de culture
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Derniers Articles Section -->
+    <section id="articles" class="py-24 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-800 to-gray-900"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-bold title-font mb-4">
+                    <span class="gradient-text">Derniers Articles</span>
+                </h2>
+                <div class="w-24 h-1 gradient-bg mx-auto rounded-full mb-4"></div>
+                <p class="text-xl text-gray-400">Découvrez nos publications récentes</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Article 1 -->
+                <article class="bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-purple-500/20 card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="Introduction.jpeg" alt="Artisanat" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 gradient-bg px-4 py-2 rounded-full text-sm font-semibold">
+                            Artisanat
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>5 Novembre 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-purple-300 hover:text-purple-200 transition">
+                            L'art de la poterie traditionnelle
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Découvrez les secrets de la poterie tétouanaise, un savoir-faire ancestral transmis de génération en génération...
+                        </p>
+                        <a href="article-detail.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold">
+                            Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Article 2 -->
+                <article class="bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-purple-500/20 card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800" alt="Peinture" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 gradient-bg px-4 py-2 rounded-full text-sm font-semibold">
+                            Art
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>3 Novembre 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-purple-300 hover:text-purple-200 transition">
+                            Les peintres contemporains de Tétouan
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Portrait d'une nouvelle génération d'artistes qui réinventent l'art tétouanais avec des techniques modernes...
+                        </p>
+                        <a href="article2-detail.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold">
+                            Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Article 3 -->
+                <article class="bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-purple-500/20 card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="téléchargement (8).jpeg" alt="Médina" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 gradient-bg px-4 py-2 rounded-full text-sm font-semibold">
+                            Patrimoine
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>1 Novembre 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-purple-300 hover:text-purple-200 transition">
+                            La médina de Tétouan : patrimoine mondial
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Explorez l'histoire fascinante de la médina de Tétouan, classée au patrimoine mondial de l'UNESCO depuis 1997...
+                        </p>
+                        <a href="article3-detail.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold">
+                            Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center">
+                <a href="articles.html" class="inline-block gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 glow">
+                    Voir tous les articles <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 backdrop-blur-md border-t border-purple-500/20 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-palette text-2xl gradient-text"></i>
+                        <span class="text-xl font-bold title-font gradient-text">Tétouan Créative</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Votre guide culturel et artistique de la ville de Tétouan.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 title-font">Navigation</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#accueil" class="hover:text-purple-400 transition">Accueil</a></li>
+                        <li><a href="#apropos" class="hover:text-purple-400 transition">À Propos</a></li>
+                        <li><a href="articles.html" class="hover:text-purple-400 transition">Articles</a></li>
+                        <li><a href="#mission" class="hover:text-purple-400 transition">Notre Mission</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 title-font">Catégories</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-purple-400 transition">Artisanat</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Art</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Patrimoine</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Culture</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 title-font">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center hover:shadow-lg transition glow">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center hover:shadow-lg transition glow">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center hover:shadow-lg transition glow">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center hover:shadow-lg transition glow">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-purple-500/20 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Tétouan Créative. Tous droits réservés. Fait avec <i class="fas fa-heart text-red-500"></i> pour Tétouan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

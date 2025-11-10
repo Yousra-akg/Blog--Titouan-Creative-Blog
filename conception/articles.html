@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Tétouan Créative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-gray-100">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/95 backdrop-blur-md border-b border-purple-500/20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-palette text-3xl gradient-text"></i>
+                    <a href="index.html" class="text-2xl font-bold title-font gradient-text">Tétouan Créative</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-300 hover:text-purple-400">Accueil</a>
+                    <a href="articles.html" class="nav-link text-purple-400">Articles</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 relative bg-gradient-to-b from-green-50 to-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-newspaper mr-2"></i>NOS PUBLICATIONS
+                </span>
+                <h1 class="text-5xl md:text-7xl font-bold title-font mb-6 gradient-text">
+                    Tous les Articles
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Explorez notre collection complète d'articles sur l'art, l'artisanat et le patrimoine culturel de Tétouan
+                </p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterArticles('tous')" class="filter-btn active px-6 py-3 rounded-full transition">
+                    Tous
+                </button>
+                <button onclick="filterArticles('artisanat')" class="filter-btn px-6 py-3 rounded-full transition">
+                    Artisanat
+                </button>
+                <button onclick="filterArticles('art')" class="filter-btn px-6 py-3 rounded-full transition">
+                    Art
+                </button>
+                <button onclick="filterArticles('patrimoine')" class="filter-btn px-6 py-3 rounded-full transition">
+                    Patrimoine
+                </button>
+                <button onclick="filterArticles('culture')" class="filter-btn px-6 py-3 rounded-full transition">
+                    Culture
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Article 1 -->
+                <article class="article-item article-card bg-white rounded-2xl overflow-hidden shadow-lg card-hover" data-category="artisanat">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="Introduction.jpeg" alt="Poterie" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 gradient-bg px-4 py-2 rounded-full text-sm font-semibold">
+                            Artisanat
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>5 Novembre 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-purple-300">
+                            L'art de la poterie traditionnelle
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Découvrez les secrets de la poterie tétouanaise, un savoir-faire ancestral transmis de génération en génération...
+                        </p>
+                        <a href="article-detail.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold">
+                            Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-item article-card bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-purple-500/20 card-hover" data-category="art">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800" alt="Peinture" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 gradient-bg px-4 py-2 rounded-full text-sm font-semibold">
+                            Art
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>3 Novembre 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-purple-300">
+                            Les peintres contemporains de Tétouan
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Portrait d'une nouvelle génération d'artistes qui réinventent l'art tétouanais...
+                        </p>
+                        <a href="article2-detail.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold">
+                            Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-item article-card bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-purple-500/20 card-hover" data-category="patrimoine">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="téléchargement (8).jpeg" alt="Médina" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 gradient-bg px-4 py-2 rounded-full text-sm font-semibold">
+                            Patrimoine
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>1 Novembre 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-purple-300">
+                            La médina de Tétouan : patrimoine mondial
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Explorez l'histoire fascinante de la médina de Tétouan, classée UNESCO...
+                        </p>
+                        <a href="article3-detail.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold">
+                            Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="article-item article-card bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-purple-500/20 card-hover" data-category="culture">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="téléchargement (9).jpeg" alt="Musique" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 gradient-bg px-4 py-2 rounded-full text-sm font-semibold">
+                            Culture
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>28 Octobre 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-purple-300">
+                            La musique andalouse à Tétouan
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Plongez dans l'univers de la musique andalouse, héritage culturel précieux...
+                        </p>
+                        <a href="article-detail.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold">
+                            Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="article-item article-card bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-purple-500/20 card-hover" data-category="artisanat">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="téléchargement (10).jpeg" alt="Textile" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 gradient-bg px-4 py-2 rounded-full text-sm font-semibold">
+                            Artisanat
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>25 Octobre 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-purple-300">
+                            Le tissage traditionnel tétouanais
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Rencontrez les artisans qui perpétuent l'art du tissage traditionnel...
+                        </p>
+                        <a href="article-detail.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold">
+                            Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="article-item article-card bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-purple-500/20 card-hover" data-category="art">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="telechargement11.jpeg" alt="Sculpture" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 gradient-bg px-4 py-2 rounded-full text-sm font-semibold">
+                            Art
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>20 Octobre 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-purple-300">
+                            Les sculpteurs modernes de Tétouan
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Découvrez comment les sculpteurs locaux fusionnent tradition et modernité...
+                        </p>
+                        <a href="article-detail.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold">
+                            Lire la suite <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 backdrop-blur-md border-t border-purple-500/20 py-12 mt-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-palette text-2xl gradient-text"></i>
+                        <span class="text-xl font-bold title-font gradient-text">Tétouan Créative</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Votre guide culturel et artistique de la ville de Tétouan.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 title-font">Navigation</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-purple-400 transition">Accueil</a></li>
+                        <li><a href="index.html#apropos" class="hover:text-purple-400 transition">À Propos</a></li>
+                        <li><a href="articles.html" class="hover:text-purple-400 transition">Articles</a></li>
+                        <li><a href="index.html#mission" class="hover:text-purple-400 transition">Notre Mission</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 title-font">Catégories</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-purple-400 transition">Artisanat</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Art</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Patrimoine</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Culture</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 title-font">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center hover:shadow-lg transition glow">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center hover:shadow-lg transition glow">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center hover:shadow-lg transition glow">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center hover:shadow-lg transition glow">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-purple-500/20 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Tétouan Créative. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
