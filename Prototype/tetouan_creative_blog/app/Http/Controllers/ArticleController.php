@@ -107,6 +107,6 @@ class ArticleController extends Controller
 
         return redirect()
             ->route('articles.index')
-            ->with('success', "L'article '{$title}' a été supprimé.");
+            ->with('success', "L'article '{$title}' a été supprimé");
     }
 }
