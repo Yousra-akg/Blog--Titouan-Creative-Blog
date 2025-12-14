@@ -19,21 +19,19 @@ class StoreArticleRequest extends FormRequest
             'slug' => ['required', 'string', 'max:200', 'unique:articles,slug'],
             'excerpt' => ['nullable', 'string'],
             'content' => ['nullable', 'string'],
-            'status' => ['required', Rule::in(['publié', 'brouillon'])],
-            'category_ids' => ['nullable', 'array'],
-            'category_ids.*' => ['integer', 'exists:categories,id'],
         ];
     }
 
     public function messages(): array
     {
         return [
-            'title.required' => 'Le titre est obligatoire.',
-            'slug.required' => 'Le slug est obligatoire.',
-            'slug.unique' => 'Ce slug est déjà utilisé pour un autre article.',
-            'status.required' => 'Le statut est obligatoire.',
-            'status.in' => 'Le statut doit être soit "publié" soit "brouillon".',
-            'category_ids.*.exists' => 'Une des catégories sélectionnées est invalide.',
+            'title.required' => 'Le titre est obligatoire',
+            'title.max' => 'Le titre ne doit pas dépasser 180 caractères',
+            'slug.required' => 'Le slug est obligatoire',
+            'slug.max' => 'Le slug ne doit pas dépasser 200 caractères',
+            'slug.unique' => 'Ce slug est déjà utilisé',
+            'excerpt.string' => 'Le résumé doit être une chaîne de caractères',
+            'content.string' => 'Le contenu doit être une chaîne de caractères',
         ];
     }
 }

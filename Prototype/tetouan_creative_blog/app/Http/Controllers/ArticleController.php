@@ -2,111 +2,76 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreArticleRequest;
-use App\Http\Requests\UpdateArticleRequest;
-use App\Models\Article;
-use App\Models\Category;
-use App\Services\ArticleService;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
+use App\Models\Article;
+use App\Models\Category; 
+use App\Services\ArticleService;
+
 
 class ArticleController extends Controller
 {
-    private ArticleService $articleService;
+    protected ArticleService $articleService;
 
-    public function __construct(ArticleService $articleService)
-    {
+    public function __construct(ArticleService $articleService){
         $this->articleService = $articleService;
     }
 
-    public function index(Request $request): View
+    public function index(Request $request)
     {
-        $categoryId = $request->query('category_id');
-        $articles = $this->articleService->getArticlesWithFilters($categoryId, 5);
+        $categoryId = $request->query('category');
+        $articles = $this->articleService->getArticlesWithFilters($categoryId, 10);
         $categories = $this->articleService->getAllCategories();
 
         return view('articles.index', [
             'articles' => $articles,
             'categories' => $categories,
-            'currentCategoryId' => $categoryId,
+            'currentCategoryId' => $categoryId
         ]);
+}
+
+    public function create()
+    {
+       $categories = Category::all(); 
+       return view('articles.create', compact('categories'));
     }
 
-    public function create(): View
-    {
-        $categories = Category::orderBy('name')->get();
+    public function store(Request $request)
+  { // Validation
+      $validated = $request->validate([
+        'title' => 'required|string|max:180',
+        'slug' => 'nullable|string|max:200|unique:articles,slug',
+        'excrept' => 'nullable|string|max:500',
+        'content' => 'nullable|string',
+        'status' => 'required|in:publié,brouillon',
+        'categories' => 'required|array',
+      ]);
 
-        return view('articles.create', [
-            'article' => new Article(),
-            'categories' => $categories,
-        ]);
+       // Génération du slug si vide
+        $slug = $validated['slug'] ?? \Str::slug($validated['title']);
+
+      // Création de l'article
+      $article = Article::create([
+        'user_id' => auth()->id(),
+        'title' => $validated['title'],
+        'slug' => $slug,
+        'excrept' => $validated['excrept'] ?? '',
+        'content' => $validated['content'] ?? '',
+        'status' => $validated['status'],
+      ]);
+
+       // Lier les catégories (sync au lieu d'attach)
+       $article->categories()->sync($validated['categories']);
+
+       return redirect()->route('articles.index')->with('success', 'Article ajouté avec succès.');
     }
 
-    public function store(StoreArticleRequest $request): RedirectResponse
-    {
-        $data = $request->validated();
 
-        $article = Article::create([
-            'user_id' => 1,
-            'title' => $data['title'],
-            'slug' => $data['slug'],
-            'excerpt' => $data['excerpt'] ?? null,
-            'content' => $data['content'] ?? null,
-            'status' => $data['status'],
-        ]);
-
-        if (!empty($data['category_ids'])) {
-            $article->categories()->sync($data['category_ids']);
+    public function destroy(Article $article){
+        if(auth()->user()->hasRole('auteur') && auth()->id() !== $article->user_id){
+            abort(403, 'vous ne peouvez supprimer que vos propores articles.');
         }
-
-        return redirect()
-            ->route('articles.index')
-            ->with('success', 'Article créé avec succès.');
-    }
-
-    public function edit(Article $article): View
-    {
-        $categories = Category::orderBy('name')->get();
-        $selectedCategories = $article->categories->pluck('id')->toArray();
-
-        return view('articles.edit', [
-            'article' => $article,
-            'categories' => $categories,
-            'selectedCategories' => $selectedCategories,
-        ]);
-    }
-
-    public function update(UpdateArticleRequest $request, Article $article): RedirectResponse
-    {
-        $data = $request->validated();
-
-        $article->update([
-            'title' => $data['title'],
-            'slug' => $data['slug'],
-            'excerpt' => $data['excerpt'] ?? null,
-            'content' => $data['content'] ?? null,
-            'status' => $data['status'],
-        ]);
-
-        if (!empty($data['category_ids'])) {
-            $article->categories()->sync($data['category_ids']);
-        } else {
-            $article->categories()->detach();
-        }
-
-        return redirect()
-            ->route('articles.index')
-            ->with('success', 'Article mis à jour avec succès.');
-    }
-
-    public function destroy(Article $article): RedirectResponse
-    {
-        $title = $article->title;
-        $article->delete();
-
-        return redirect()
-            ->route('articles.index')
-            ->with('success', "L'article '{$title}' a été supprimé");
+        
+        $this->articleService->delete($article);
+        return redirect()->route('articles.index')->with('success',' Article supprimé avec succés.');
     }
 }
